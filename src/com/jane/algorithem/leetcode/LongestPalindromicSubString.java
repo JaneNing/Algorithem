@@ -1,3 +1,5 @@
+package com.jane.algorithem.leetcode;
+
 public class LongestPalindromicSubString {
 
     public String longestPalindrome(String s) {

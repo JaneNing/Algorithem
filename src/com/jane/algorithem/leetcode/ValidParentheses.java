@@ -1,14 +1,8 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+package com.jane.algorithem.leetcode;
+
 import java.util.Stack;
 
 public class ValidParentheses {
-
-    public static void main(String[] args) {
-        ValidParentheses validParentheses = new ValidParentheses();
-        validParentheses.isValid("([)]");
-    }
 
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
