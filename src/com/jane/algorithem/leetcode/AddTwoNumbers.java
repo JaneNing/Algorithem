@@ -27,7 +27,7 @@ public class AddTwoNumbers {
         return head;
     }
 
-    public class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
 
