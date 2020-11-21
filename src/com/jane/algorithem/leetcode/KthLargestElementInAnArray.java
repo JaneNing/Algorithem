@@ -2,11 +2,6 @@ package com.jane.algorithem.leetcode;
 
 public class KthLargestElementInAnArray {
 
-    public static void main(String[] args) {
-        KthLargestElementInAnArray kthLargestElementInAnArray = new KthLargestElementInAnArray();
-        kthLargestElementInAnArray.findKthLargest(new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6}, 9);
-    }
-
     public int findKthLargest(int[] nums, int k) {
         quickSort(nums, 0, nums.length - 1);
         return nums[nums.length - k];
