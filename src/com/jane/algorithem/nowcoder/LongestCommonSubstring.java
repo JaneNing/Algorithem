@@ -35,4 +35,5 @@ public class LongestCommonSubstring {
         }
         return len == 0 ? "-1" : str1.substring(start, start + len);
     }
+    //123
 }
