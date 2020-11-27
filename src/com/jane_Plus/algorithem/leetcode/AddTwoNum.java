@@ -1,4 +1,4 @@
-package com.jane.algorithem.niubicode;
+package com.jane_Plus.algorithem.leetcode;
 
 /**
  * Definition for singly-linked list.
