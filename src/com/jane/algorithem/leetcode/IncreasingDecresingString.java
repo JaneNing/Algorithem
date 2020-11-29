@@ -2,11 +2,6 @@ package com.jane.algorithem.leetcode;
 
 public class IncreasingDecresingString {
 
-    public static void main(String[] args) {
-        IncreasingDecresingString increasingDecresingString = new IncreasingDecresingString();
-        System.out.println(increasingDecresingString.sortString("abc"));
-    }
-
     public String sortString(String s) {
         int[] arr = new int[26];
         for (int i = 0; i < s.length(); i++) {

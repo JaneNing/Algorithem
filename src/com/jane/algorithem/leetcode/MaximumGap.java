@@ -7,11 +7,6 @@ import java.util.Map;
 
 public class MaximumGap {
 
-    public static void main(String[] args) {
-        MaximumGap maximumGap = new MaximumGap();
-        maximumGap.maximumGap(new int[]{1, 1, 1, 1, 1, 5, 5, 5, 5, 5});
-    }
-
     public int maximumGap(int[] nums) {
         if (nums == null || nums.length < 2) return 0;
         int max = nums[0], min = nums[0];
