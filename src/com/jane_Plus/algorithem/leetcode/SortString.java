@@ -4,7 +4,7 @@ package com.jane_Plus.algorithem.leetcode;
 public class SortString {
 
 
-    public static String sortString_1370(String s) {
+    public  String sortString_1370(String s) {
         if (s == null || s.length() == 0) {
             return "";
         }

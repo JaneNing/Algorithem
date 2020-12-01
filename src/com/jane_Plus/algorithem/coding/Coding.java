@@ -25,7 +25,40 @@ public class Coding {
     public static void main(String[] args) {
     }
 
-    public String reorganizeString(String S) {
+    public String reorganizeString(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        int[] nums = new int[26];
+        int max = 0;
+        int maxIndex=0;
+        int sum = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            int k = ++nums[(s.charAt(i) - 'a')];
+            if (k > max) {
+                max = k;
+                maxIndex=i;
+            }
+            sum +=sum;
+        }
+        if (sum - max > max - 1) {
+            StringBuilder sb = new StringBuilder();
+            while (sb.length() <s.length()) {
+                for (int i = 0; i < nums.length; i++) {
+                    if (max > 0) {
+                        sb.append((char) maxIndex+'a');
+                        max--;
+                    }
+                    if (nums[i] > 0) {
+                        sb.append(i + 'a');
+                    }
+                }
+
+
+
+            }
+
+        }
         return "";
     }
 }
