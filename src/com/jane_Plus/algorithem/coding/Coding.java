@@ -3,62 +3,45 @@ package com.jane_Plus.algorithem.coding;
 import java.util.Arrays;
 
 /**
- *给定一个字符串S，检查是否能重新排布其中的字母，使得两相邻的字符不同。
- *
- * 若可行，输出任意可行的结果。若不可行，返回空字符串。
- *
- * 示例 1:
- *
- * 输入: S = "aab"
- * 输出: "aba"
- * 示例 2:
- *
- * 输入: S = "aaab"
- * 输出: ""
- * 注意:
- *
- * S 只包含小写字母并且长度在[1, 500]区间内。
+ 给定长度分别为 m 和 n 的两个数组，其元素由 0-9 构成，表示两个自然数各位上的数字。现在从这两个数组中选出 k (k <= m + n) 个数字拼接成一个新的数，要求从同一个数组中取出的数字保持其在原数组中的相对顺序。
+
+ 求满足该条件的最大数。结果返回一个表示该最大数的长度为 k 的数组。
+
+ 说明: 请尽可能地优化你算法的时间和空间复杂度。
+
+ 示例 1:
+
+ 输入:
+ nums1 = [3, 4, 6, 5]
+ nums2 = [9, 1, 2, 5, 8, 3]
+ k = 5
+ 输出:
+ [9, 8, 6, 5, 3]
+ 示例 2:
+
+ 输入:
+ nums1 = [6, 7]
+ nums2 = [6, 0, 4]
+ k = 5
+ 输出:
+ [6, 7, 6, 0, 4]
+ 示例 3:
+
+ 输入:
+ nums1 = [3, 9]
+ nums2 = [8, 9]
+ k = 3
+ 输出:
+ [9, 8, 9]
  *
  */
 public class Coding {
 
     public static void main(String[] args) {
+
     }
 
-    public String reorganizeString(String s) {
-        if (s == null || s.length() == 0) {
-            return "";
-        }
-        int[] nums = new int[26];
-        int max = 0;
-        int maxIndex=0;
-        int sum = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            int k = ++nums[(s.charAt(i) - 'a')];
-            if (k > max) {
-                max = k;
-                maxIndex=i;
-            }
-            sum +=sum;
-        }
-        if (sum - max > max - 1) {
-            StringBuilder sb = new StringBuilder();
-            while (sb.length() <s.length()) {
-                for (int i = 0; i < nums.length; i++) {
-                    if (max > 0) {
-                        sb.append((char) maxIndex+'a');
-                        max--;
-                    }
-                    if (nums[i] > 0) {
-                        sb.append(i + 'a');
-                    }
-                }
-
-
-
-            }
-
-        }
-        return "";
-    }
+//    public String algorithm(String s) {
+//
+//    }
 }
