@@ -84,10 +84,10 @@ public class AddTwoNum {
         }
         return head.next;
     }
-}
+    private static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
 
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
 }
