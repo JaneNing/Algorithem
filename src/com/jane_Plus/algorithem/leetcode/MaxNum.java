@@ -8,7 +8,7 @@ public class MaxNum {
             return null;
         }
         int[] res = new int[k];
-        for (int i = 0; i < k && i <= nums1.length; i++) {
+        for (int i = 0; i <= k && i <= nums1.length; i++) {
             int[] merge = merge(nums1, nums2, k, i);
             if (compare(merge, res,k)>0) {
                 res = merge;
