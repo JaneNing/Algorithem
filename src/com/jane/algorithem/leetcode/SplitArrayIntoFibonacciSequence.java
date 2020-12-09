@@ -5,11 +5,6 @@ import java.util.List;
 
 public class SplitArrayIntoFibonacciSequence {
 
-    public static void main(String[] args) {
-        SplitArrayIntoFibonacciSequence splitArrayIntoFibonacciSequence = new SplitArrayIntoFibonacciSequence();
-        splitArrayIntoFibonacciSequence.splitIntoFibonacci("112358130");
-    }
-
     public List<Integer> splitIntoFibonacci(String S) {
         long[] arr = new long[200];
         int i = 0;

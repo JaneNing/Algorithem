@@ -2,11 +2,6 @@ package com.jane.algorithem.leetcode;
 
 public class SpiralMatrixII {
 
-    public static void main(String[] args) {
-        SpiralMatrixII spiralMatrixII = new SpiralMatrixII();
-        spiralMatrixII.generateMatrix(3);
-    }
-
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         int sum = 0;
