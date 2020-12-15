@@ -2,11 +2,6 @@ package com.jane.algorithem.leetcode;
 
 public class BurstBalloons {
 
-    public static void main(String[] args) {
-        BurstBalloons burstBalloons = new BurstBalloons();
-        burstBalloons.maxCoins(new int[]{3, 1, 5, 8});
-    }
-
     public int maxCoins(int[] nums) {
         if (nums.length == 0) return 0;
         int[][] dp = new int[nums.length][nums.length];
