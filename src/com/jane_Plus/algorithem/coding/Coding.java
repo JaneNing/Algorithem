@@ -1,7 +1,5 @@
 package com.jane_Plus.algorithem.coding;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 /**
 
  *
