@@ -4,18 +4,6 @@ package com.jane_Plus.algorithem.leetcode;
 import java.util.Arrays;
 
 public class SortList {
-    public static void main(String[] args) {
-        ListNode node = new ListNode(0);
-        ListNode head = node;
-        Integer[] a = new Integer[]{4,2,1,3};
-
-        for (int i = 0; i < a.length; i++) {
-            node.next = new ListNode(a[i]);
-            node = node.next;
-        }
-        ListNode res = new  SortList().sortList_148(head.next);
-
-    }
     public ListNode sortList_148(ListNode head) {
         return sort(head, null);
     }
