@@ -8,7 +8,7 @@ public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode((l1.val + l2.val) % 10);
         ListNode node = head;
-        int status = head.val / 10;
+        int status = (l1.val + l2.val) / 10;
         int num;
         l1 = l1.next;
         l2 = l2.next;
