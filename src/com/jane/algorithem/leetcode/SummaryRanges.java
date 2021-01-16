@@ -5,11 +5,6 @@ import java.util.List;
 
 public class SummaryRanges {
 
-    public static void main(String[] args) {
-        SummaryRanges summaryRanges = new SummaryRanges();
-        summaryRanges.summaryRanges(new int[]{0, 1, 2, 4, 5, 7});
-    }
-
     public List<String> summaryRanges(int[] nums) {
         List<String> res = new ArrayList<>();
         if (nums.length == 0) return res;
