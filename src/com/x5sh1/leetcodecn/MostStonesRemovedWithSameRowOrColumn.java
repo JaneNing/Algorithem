@@ -1,4 +1,7 @@
-package com.x5sh1.leetcode-cn
+package com.x5sh1.leetcodecn;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/
