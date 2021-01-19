@@ -3,29 +3,47 @@ package com.jane.algorithem.leetcode;
 public class LongestPalindromicSubString {
 
     public String longestPalindrome(String s) {
-        int start = 0, len = 0;
-        for (int i = 0; i < s.length(); i++) {
-            int l = i, r = i;
-            while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-                if (r - l + 1 > len) {
-                    start = l;
-                    len = r - l + 1;
+        int len = s.length();
+        int[][] dp = new int[len][len];
+        for(int i = 0 ; i < len ; i++){
+            dp[i][i] = 1;
+        }
+        int res = 1 , index = 0;
+        for(int i = 1 ; i < len ; i++){
+            for(int j = 0 ; j < len - i ; j++){
+                char c1 = s.charAt(j);
+                char c2 = s.charAt(j + i);
+                dp[j][j+i] = c1 == c2 && (j + 1 > j + i - 1 || dp[j+1][j+i-1] != 0) ? (2 + (j + 1 > j + i - 1 ? 0 : dp[j+1][j+i-1])) : 0;
+                if(dp[j][j+i] > res){
+                    res = dp[j][j+i];
+                    index = j;
                 }
-                l--;
-                r++;
-            }
-            l = i;
-            r = i + 1;
-            while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-                if (r - l + 1 > len) {
-                    start = l;
-                    len = r - l + 1;
-                }
-                l--;
-                r++;
             }
         }
-        return s.substring(start, start + len);
+        return s.substring(index,res);
+//        int start = 0, len = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            int l = i, r = i;
+//            while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+//                if (r - l + 1 > len) {
+//                    start = l;
+//                    len = r - l + 1;
+//                }
+//                l--;
+//                r++;
+//            }
+//            l = i;
+//            r = i + 1;
+//            while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+//                if (r - l + 1 > len) {
+//                    start = l;
+//                    len = r - l + 1;
+//                }
+//                l--;
+//                r++;
+//            }
+//        }
+//        return s.substring(start, start + len);
     }
 
     //dp
