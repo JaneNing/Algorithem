@@ -5,26 +5,26 @@ import java.util.Stack;
 public class ValidParentheses {
 
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == '(' || c == '{' || c == '[') {
+            if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
             } else {
                 if (stack.isEmpty()) {
                     return false;
                 }
-                Character pop = stack.pop();
-                if (pop == '(') {
-                    if (c != ')') {
+                char cc = stack.pop();
+                if (c == ')') {
+                    if (cc != '(') {
                         return false;
                     }
-                } else if (pop == '[') {
-                    if (c != ']') {
+                } else if (c == ']') {
+                    if (cc != '[') {
                         return false;
                     }
-                } else if (pop == '{') {
-                    if (c != '}') {
+                } else if (c == '}') {
+                    if (cc != '{') {
                         return false;
                     }
                 }
@@ -32,4 +32,33 @@ public class ValidParentheses {
         }
         return stack.isEmpty();
     }
+
+//    public boolean isValid(String s) {
+//        Stack<Character> stack = new Stack<>();
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//            if (c == '(' || c == '{' || c == '[') {
+//                stack.push(c);
+//            } else {
+//                if (stack.isEmpty()) {
+//                    return false;
+//                }
+//                Character pop = stack.pop();
+//                if (pop == '(') {
+//                    if (c != ')') {
+//                        return false;
+//                    }
+//                } else if (pop == '[') {
+//                    if (c != ']') {
+//                        return false;
+//                    }
+//                } else if (pop == '{') {
+//                    if (c != '}') {
+//                        return false;
+//                    }
+//                }
+//            }
+//        }
+//        return stack.isEmpty();
+//    }
 }
