@@ -3,28 +3,32 @@ package com.jane.algorithem.leetcode;
 public class MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = null, node = null;
-        int base1, base2;
-        while (l1 != null || l2 != null) {
-            base1 = l1 == null ? 51 : l1.val;
-            base2 = l2 == null ? 51 : l2.val;
-            if (base1 < base2) {
-                if (head == null) {
-                    head = node = l1;
-                } else {
-                    node.next = l1;
-                    node = node.next;
-                }
-                l1 = l1.next;
+        if (l1 == null) {
+            return l2;
+        } else if (l2 == null) {
+            return l1;
+        }
+        ListNode head = l1.val < l2.val ? l1 : l2;
+        ListNode node = head;
+        ListNode node1 = head == l1 ? l1.next : l1;
+        ListNode node2 = head == l2 ? l2.next : l2;
+        while (node1 != null || node2 != null) {
+            if (node1 == null) {
+                node.next = node2;
+                node2 = node2.next;
+            } else if (node2 == null) {
+                node.next = node1;
+                node1 = node1.next;
             } else {
-                if (head == null) {
-                    head = node = l2;
+                if (node1.val < node2.val) {
+                    node.next = node1;
+                    node1 = node1.next;
                 } else {
-                    node.next = l2;
-                    node = node.next;
+                    node.next = node2;
+                    node2 = node2.next;
                 }
-                l2 = l2.next;
             }
+            node = node.next;
         }
         return head;
     }
