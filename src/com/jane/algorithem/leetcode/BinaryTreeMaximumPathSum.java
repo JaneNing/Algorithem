@@ -3,23 +3,17 @@ package com.jane.algorithem.leetcode;
 public class BinaryTreeMaximumPathSum {
 
     public int maxPathSum(TreeNode root) {
-        int[] res = new int[]{-1001};
-        int value=fun(root,res);
-        return Math.max(res[0],value);
+        int[] res = new int[]{Integer.MIN_VALUE};
+        recursion(root, res);
+        return res[0];
     }
 
-    private int fun(TreeNode node, int[] res) {
-        if (node == null) {
-            return 0;
-        }
-        int leftValue = fun(node.left, res);
-        int rightValue = fun(node.right, res);
-        res[0] = Math.max(res[0], Math.max(Math.max(leftValue, rightValue), leftValue + rightValue)+node.val);
-        if (leftValue <= 0 && rightValue <= 0) {
-            return node.val;
-        } else {
-            return Math.max(leftValue, rightValue) + node.val;
-        }
+    private int recursion(TreeNode node, int[] res) {
+        if (node == null) return 0;
+        int leftVal = recursion(node.left, res);
+        int rightVal = recursion(node.right, res);
+        res[0] = Math.max(res[0], Math.max(Math.max(Math.max(node.val, node.val + leftVal), node.val + rightVal), node.val + leftVal + rightVal));
+        return Math.max(Math.max(node.val, node.val + leftVal), node.val + rightVal);
     }
 
     private class TreeNode {

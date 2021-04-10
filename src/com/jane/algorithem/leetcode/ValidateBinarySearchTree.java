@@ -3,14 +3,13 @@ package com.jane.algorithem.leetcode;
 public class ValidateBinarySearchTree {
 
     public boolean isValidBST(TreeNode root) {
-        return isValid(root.left, Long.MIN_VALUE, root.val) &&
-                isValid(root.right, root.val, Long.MAX_VALUE);
+        return recursion(root, (long) Integer.MAX_VALUE + 1, (long) Integer.MIN_VALUE - 1);
     }
 
-    private boolean isValid(TreeNode node, long left, long right) {
+    private boolean recursion(TreeNode node, long up, long down) {
         if (node == null) return true;
-        if (node.val <= left || node.val >= right) return false;
-        return isValid(node.left, left, Math.min(right, node.val)) && isValid(node.right, Math.max(left, node.val), right);
+        if (node.val >= up || node.val <= down) return false;
+        return recursion(node.left, node.val, down) && recursion(node.right, up, node.val);
     }
 
     private class TreeNode {

@@ -1,51 +1,48 @@
 package com.jane.algorithem.leetcode;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class LongestConsecutiveSequence {
 
     public int longestConsecutive(int[] nums) {
-        int len = nums.length;
-        int[] fa = new int[len];
-        for (int i = 0; i < len; i++) {
-            fa[i] = i;
+        Map<Integer, Integer> map = new HashMap<>(10000);
+        for (int num : nums) {
+            map.put(num, num);
         }
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < len; i++) {
-            if (map.get(nums[i]) != null) continue;
-            Integer i1 = map.get(nums[i] - 1);
-            if (i1 != null) {
-                union(i1, i, fa);
+        for (int num : nums) {
+            if (map.get(num - 1) != null) {
+                union(map, num, num - 1);
             }
-            Integer i2 = map.get(nums[i] + 1);
-            if (i2 != null) {
-                union(i2, i, fa);
+            if (map.get(num + 1) != null) {
+                union(map, num, num + 1);
             }
-            map.put(nums[i], i);
         }
         int res = 0;
         Map<Integer, Integer> countMap = new HashMap<>();
-        for (int i = 0; i < len; i++) {
-            Integer num = countMap.getOrDefault(find(i, fa), 0);
-            countMap.put(find(i, fa), num + 1);
-            res = Math.max(res, num + 1);
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) continue;
+            int p = find(map, num);
+            Integer count = countMap.getOrDefault(p, 0);
+            res = Math.max(count + 1, res);
+            countMap.put(p, count + 1);
         }
         return res;
     }
 
-    private int find(int x, int[] fa) {
-        if (fa[x] == x) return x;
-        else {
-            int pa = find(fa[x], fa);
-            fa[x] = pa;
-            return pa;
-        }
+    private int find(Map<Integer, Integer> fa, int x) {
+        if (fa.get(x) == x) return x;
+        int i = find(fa, fa.get(x));
+        fa.put(x, i);
+        return i;
     }
 
-    private void union(int x, int y, int[] fa) {
-        int xp = find(x, fa);
-        int yp = find(y, fa);
-        fa[xp] = yp;
+    private void union(Map<Integer, Integer> fa, int x, int y) {
+        int i = find(fa, x);
+        int j = find(fa, y);
+        fa.put(i, j);
     }
 }

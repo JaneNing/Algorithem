@@ -5,33 +5,34 @@ import java.util.Stack;
 public class LargestRectangleInHistogram {
 
     public int largestRectangleArea(int[] heights) {
-        int len = heights.length;
-        int[] left = new int[len];
-        int[] right = new int[len];
-        Stack<Integer> stack = new Stack();
-        Stack<Integer> index = new Stack();
-        for (int i = 0; i < len; i++) {
-            while (!stack.isEmpty() && stack.peek() >= heights[i]) {
-                stack.pop();
-                index.pop();
+        Stack<Integer> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        int[] left = new int[heights.length];
+        int[] right = new int[heights.length];
+        for (int i = 0; i < heights.length; i++) {
+            while (!stack1.isEmpty() && heights[stack1.peek()] >= heights[i]) {
+                stack1.pop();
             }
-            left[i] = stack.isEmpty() ? -1 : index.peek();
-            stack.push(heights[i]);
-            index.push(i);
+            if (stack1.isEmpty()) {
+                left[i] = -1;
+            } else {
+                left[i] = stack1.peek();
+            }
+            stack1.push(i);
         }
-        stack.clear();
-        index.clear();
-        for (int i = len - 1; i >= 0; i--) {
-            while (!stack.isEmpty() && stack.peek() >= heights[i]) {
-                stack.pop();
-                index.pop();
+        for (int i = heights.length - 1; i >= 0; i--) {
+            while (!stack2.isEmpty() && heights[stack2.peek()] >= heights[i]) {
+                stack2.pop();
             }
-            right[i] = stack.isEmpty() ? len : index.peek();
-            stack.push(heights[i]);
-            index.push(i);
+            if (stack2.isEmpty()) {
+                right[i] = heights.length;
+            } else {
+                right[i] = stack2.peek();
+            }
+            stack2.push(i);
         }
         int res = 0;
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < heights.length; i++) {
             res = Math.max(res, heights[i] * (right[i] - left[i] - 1));
         }
         return res;

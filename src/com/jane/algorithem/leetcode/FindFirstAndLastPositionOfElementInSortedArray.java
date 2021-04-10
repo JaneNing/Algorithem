@@ -3,40 +3,59 @@ package com.jane.algorithem.leetcode;
 public class FindFirstAndLastPositionOfElementInSortedArray {
 
     public int[] searchRange(int[] nums, int target) {
-        int leftIndex = searchLeft(nums, 0, nums.length - 1, target);
-        int rightIndex = searchRight(nums, 0, nums.length - 1, target);
-        return new int[]{leftIndex, rightIndex};
+        int l = 0, r = nums.length - 1, m;
+        while (l <= r) {
+            m = l + (r - l) / 2;
+            if (nums[m] == target) {
+                int left = searchLeft(nums, l, m, target);
+                int right = searchRight(nums, m, r, target);
+                return new int[]{left, right};
+            } else if (nums[m] < target) {
+                l = m + 1;
+            } else {
+                r = m - 1;
+            }
+        }
+        return new int[]{-1, -1};
     }
 
     private int searchLeft(int[] nums, int l, int r, int target) {
-        if (l > r) return -1;
-        int m = (l + r) / 2;
-        if (nums[m] == target) {
-            if (m - 1 >= l && nums[m - 1] == target) {
-                return searchLeft(nums, l, m - 1, target);
+        int m;
+        int ll = l, rr = r;
+        while (ll <= rr) {
+            m = ll + (rr - ll) / 2;
+            if (nums[m] == target) {
+                if (m != l && nums[m - 1] == target) {
+                    rr = m - 1;
+                } else {
+                    return m;
+                }
+            } else if (nums[m] < target) {
+                ll = m + 1;
             } else {
-                return m;
+                rr = m - 1;
             }
-        } else if (nums[m] < target) {
-            return searchLeft(nums, m + 1, r, target);
-        } else {
-            return searchLeft(nums, l, m - 1, target);
         }
+        return r;
     }
 
     private int searchRight(int[] nums, int l, int r, int target) {
-        if (l > r) return -1;
-        int m = (l + r) / 2;
-        if (nums[m] == target) {
-            if (m + 1 <= r && nums[m + 1] == target) {
-                return searchRight(nums, m + 1, r, target);
+        int m;
+        int ll = l, rr = r;
+        while (ll <= rr) {
+            m = ll + (rr - ll) / 2;
+            if (nums[m] == target) {
+                if (m != r && nums[m + 1] == target) {
+                    ll = m + 1;
+                } else {
+                    return m;
+                }
+            } else if (nums[m] < target) {
+                ll = m + 1;
             } else {
-                return m;
+                rr = m - 1;
             }
-        } else if (nums[m] < target) {
-            return searchRight(nums, m + 1, r, target);
-        } else {
-            return searchRight(nums, l, m - 1, target);
         }
+        return l;
     }
 }
