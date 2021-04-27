@@ -1,37 +1,55 @@
 package com.jane.algorithem.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class KthLargestElementInAnArray {
 
     public int findKthLargest(int[] nums, int k) {
-        int len = nums.length;
-        int[] arr = new int[len + 1];
-        for (int i = 0; i < len; i++) {
-            arr[i + 1] = nums[i];
+        PriorityQueue<Integer> queue = new PriorityQueue();
+        for (int i = 0; i < k; i++) {
+            queue.add(nums[i]);
         }
-        for (int i = arr.length / 2; i > 0; i--) {
-            adjust(arr, i, arr.length);
+        for (int i = k; i < nums.length; i++) {
+            if (queue.peek() < nums[i]) {
+                queue.poll();
+                queue.add(nums[i]);
+            }
         }
-        int count = 0;
-        while (count != k) {
-            count++;
-            int tem = arr[arr.length - count];
-            arr[arr.length - count] = arr[1];
-            arr[1] = tem;
-            adjust(arr, 1, arr.length - count);
-        }
-        return arr[arr.length - k];
+        return queue.peek();
     }
 
-    private void adjust(int[] arr, int i, int limit) {
-        while (i * 2 < limit) {
-            int index = i * 2 + 1 == limit ? i * 2 : (arr[i * 2] < arr[i * 2 + 1] ? i * 2 + 1 : i * 2);
-            if (arr[i] > arr[index]) break;
-            int tem = arr[i];
-            arr[i] = arr[index];
-            arr[index] = tem;
-            i = index;
-        }
-    }
+//    public int findKthLargest(int[] nums, int k) {
+//        int len = nums.length;
+//        int[] arr = new int[len + 1];
+//        for (int i = 0; i < len; i++) {
+//            arr[i + 1] = nums[i];
+//        }
+//        for (int i = arr.length / 2; i > 0; i--) {
+//            adjust(arr, i, arr.length);
+//        }
+//        int count = 0;
+//        while (count != k) {
+//            count++;
+//            int tem = arr[arr.length - count];
+//            arr[arr.length - count] = arr[1];
+//            arr[1] = tem;
+//            adjust(arr, 1, arr.length - count);
+//        }
+//        return arr[arr.length - k];
+//    }
+//
+//    private void adjust(int[] arr, int i, int limit) {
+//        while (i * 2 < limit) {
+//            int index = i * 2 + 1 == limit ? i * 2 : (arr[i * 2] < arr[i * 2 + 1] ? i * 2 + 1 : i * 2);
+//            if (arr[i] > arr[index]) break;
+//            int tem = arr[i];
+//            arr[i] = arr[index];
+//            arr[index] = tem;
+//            i = index;
+//        }
+//    }
 
 //    public int findKthLargest(int[] nums, int k) {
 //        int l = 0, r = nums.length - 1, index;
