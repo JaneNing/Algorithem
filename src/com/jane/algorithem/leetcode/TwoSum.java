@@ -9,14 +9,14 @@ import java.util.Map;
 public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> numMap = new HashMap<>();
+        Map<Integer, Integer> indexValueMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            Integer index = numMap.get(target - nums[i]);
+            Integer index = indexValueMap.get(target - nums[i]);
             if (index != null) {
-                return new int[]{i, index};
+                return new int[]{index, i};
             }
-            numMap.put(nums[i], i);
+            indexValueMap.put(nums[i], i);
         }
-        return new int[]{-1, -1};
+        return new int[]{};
     }
 }

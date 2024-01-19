@@ -1,35 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb1c8356-84f3-4949-aacd-4bcb3b7ce40e" name="Default Changelist" comment="04/27/2021">
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/BrickWall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/CheckIfWordEqualsSummationOfTwoWords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/ClosestRoom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/EmployeeImportance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/FrogJump.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/ImplementStackUsingQueues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/LongestCommonSubsequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/MaximumElementAfterDecreasingAndRearranging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/MaximumLengthOfRepeatedSubarray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/MaximumValueAfterInsertion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/NumberOfSubmatricesThatSumToTarget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/ProcessTasksUsingServers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/ReplaceAllDigitsWithCharacters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/SeatReservationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/SingleNumberII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/SumOfSquareNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortyOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/BinaryTreeZigzagLevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/BinaryTreeZigzagLevelOrderTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/KthLargestElementInAnArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/KthLargestElementInAnArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/SortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jane/algorithem/leetcode/SortList.java" afterDir="false" />
-    </list>
-    <list id="de80d3a1-1410-4be4-92a8-8a840816a828" name="Revert &quot;=&quot;" comment="Revert &quot;=&quot;&#10;&#10;This reverts commit b621d55e">
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortyEight.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortyFive.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortyNine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortySeven.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jane/algorithem/offer/FortySix.java" beforeDir="false" />
-    </list>
+    <list default="true" id="cb1c8356-84f3-4949-aacd-4bcb3b7ce40e" name="Default Changelist" comment="04/27/2021" />
+    <list id="de80d3a1-1410-4be4-92a8-8a840816a828" name="Revert &quot;=&quot;" comment="Revert &quot;=&quot;&#10;&#10;This reverts commit b621d55e" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +117,9 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="25" />
     <option name="width" value="1440" />
@@ -200,14 +176,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622348666829" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/IDEA/Project/Algorithem",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.ProcessTasksUsingServers">
     <configuration name="BinaryTreeZigzagLevelOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jane.algorithem.leetcode.BinaryTreeZigzagLevelOrderTraversal" />
@@ -283,6 +261,13 @@
         <item itemvalue="Application.ClosestRoom" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -621,15 +606,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -644,7 +620,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="02/16/2021" />
